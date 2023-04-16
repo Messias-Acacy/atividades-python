@@ -1,0 +1,11 @@
+numero = int(input('digite o número que você quer ver a tabuada: '))
+print(f'2*{numero}={numero*2}')
+print(f'3*{numero}={numero*3}')
+print(f'4*{numero}={numero*4}')
+print(f'5*{numero}={numero*5}')
+print(f'6*{numero}={numero*6}')
+print(f'7*{numero}={numero*7}')
+print(f'8*{numero}={numero*8}')
+print(f'9*{numero}={numero*9}')
+print(f'10*{numero}={numero*10}')
+
