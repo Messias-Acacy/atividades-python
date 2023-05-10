@@ -94,6 +94,7 @@ while True:
 
     if chances == 0:
         print('Você perdeu!')
+        palito(chances)
         break
     if chances > 0:
         confirm= input('Quer responder? Digite SIM/NÃO: ')
