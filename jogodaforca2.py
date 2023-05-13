@@ -55,7 +55,7 @@ def vitoria(numero2):
     """)
 
 
-palavras = ['sapato','cronologia','paralelepipedo','Fahrenheit','ministro']
+palavras = ['sapato','cronologia','paralelepipedo','fahrenheit','ministro']
 texto = choice(palavras)
 resultado = []
 chances = 6
@@ -92,6 +92,9 @@ while True:
     else:
         palito(chances)
 
+    if '_' not in resultado:
+        vitoria(0)
+        break
     if chances == 0:
         print('Você perdeu!')
         break
