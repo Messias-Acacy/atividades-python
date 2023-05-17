@@ -10,11 +10,7 @@ while confirm in 'SIMsimYESyes':
     desenho = input('digite X ou O para começar: ').upper()
     while desenho not in ('XO'):
             desenho = input('digite ''exatamente'' X ou O para marcar: ').upper()
-    
-    contador_jogador = 0
-    jogador1 = desenho
-    if jogador1 =='X':
-            jogador2 = 'O'
+
     else:
         jogador2 ='X'
     #printa a tela inicial
@@ -32,10 +28,6 @@ while confirm in 'SIMsimYESyes':
     while True:
         
     #cuida de retirar e colocar posição no vetor
-        contador_jogador = contador_jogador+1
-        if contador_jogador%2 != 0:
-            desenho = jogador1
-        else: desenho = jogador2
 
         posicaoy = int(input('digite a posição da linha: '))
         while posicaoy <1 or posicaoy > 3:
@@ -114,6 +106,11 @@ while confirm in 'SIMsimYESyes':
             break
         else:
             contador_velha = 0
+        
+        if desenho =='X':
+            desenho ='O'
+        else:
+            desenho ='X'
     confirm = input('Quer Jogar de novo? [S/N]: ')
     if confirm not in ('YESSIMsimSyess'):
         print('Programa encerrado!')
