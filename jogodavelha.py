@@ -42,10 +42,20 @@ while confirm in 'SIMsimYESyes':
         elif posicaox %2 !=0 and posicaox !=1:
             posicaox+=1
         else:
-            posicaox
-        
-        del jogo[posicaoy-1][posicaox]
-        jogo[posicaoy-1].insert(posicaox,desenho)
+            posicaox=posicaox
+        #tratando as regras
+        if jogo[posicaoy-1][posicaox] not in(' '):
+            print()
+            print('já existe algo marcado aqui!')
+            
+            if desenho =='X':
+                desenho ='O'
+            else:
+                desenho ='O'
+            print()
+        else:
+            del jogo[posicaoy-1][posicaox]
+            jogo[posicaoy-1].insert(posicaox,desenho)
     #====================== 
     #print do vetor após alteração em seu local
         for a in range(3):
@@ -114,4 +124,5 @@ while confirm in 'SIMsimYESyes':
     confirm = input('Quer Jogar de novo? [S/N]: ')
     if confirm not in ('YESSIMsimSyess'):
         print('Programa encerrado!')
-        break
+    else:
+        continue
