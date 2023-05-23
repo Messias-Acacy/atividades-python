@@ -6,6 +6,7 @@ while confirm in 'SIMsimYESyes':
     contadoro = 0
     parar = 0
     contador_velha = 0
+    condicao = True
     
     desenho = input('digite X ou O para começar: ').upper()
     while desenho not in ('XO'):
@@ -34,7 +35,7 @@ while confirm in 'SIMsimYESyes':
             posicaoy = int(input('digite uma posiçãode 1 a 3 para  a linha: '))
         posicaox = int(input('digite a posição da coluna: '))
         while posicaox <1 or posicaox > 3:
-            posicaox = int(input('digite a posição da coluna: '))
+            posicaox = int(input('digite uma posição de 1a 3 para a coluna: '))
         print()
     # cuida de colocar a posição real no vetor
         if posicaox %2 !=0 and posicaox ==1:
@@ -47,13 +48,10 @@ while confirm in 'SIMsimYESyes':
         if jogo[posicaoy-1][posicaox] not in(' '):
             print()
             print('já existe algo marcado aqui!')
-            
-            if desenho =='X':
-                desenho ='O'
-            else:
-                desenho ='O'
+            condicao = True
             print()
         else:
+            condicao=False
             del jogo[posicaoy-1][posicaox]
             jogo[posicaoy-1].insert(posicaox,desenho)
     #====================== 
@@ -86,7 +84,7 @@ while confirm in 'SIMsimYESyes':
         if jogo [0][0] =='O' and jogo [1][2] =='O'  and jogo [2][4] =='O':
             print("Fim de jogo! O venceu!")
             break
-    #cc1 = cruzado direita
+    #cc1 = cruzado da direita
         if jogo [2][0] =='X' and jogo [1][2] =='X'  and jogo [0][4] =='X':
             print("Fim de jogo! X venceu!")
             break
@@ -117,10 +115,16 @@ while confirm in 'SIMsimYESyes':
         else:
             contador_velha = 0
         
-        if desenho =='X':
-            desenho ='O'
+        if condicao == True:
+            if desenho =='X':
+                desenho='X'
+            else:
+                desenho='O'
         else:
-            desenho ='X'
+            if desenho =='X':
+                desenho ='O'
+            else:
+                desenho ='X'
     confirm = input('Quer Jogar de novo? [S/N]: ')
     if confirm not in ('YESSIMsimSyess'):
         print('Programa encerrado!')
