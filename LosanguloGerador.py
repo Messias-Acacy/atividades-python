@@ -1,5 +1,5 @@
-quantidade = int(input("digitea quantidade de losangulos-> "))
-tamanho = int(input("digite o tamanho do losangulos -> "))
+quantidade = int(input("digite a quantidade de losangulos-> "))
+tamanho = int(input("digite o tamanho do losangulo -> "))
 
 for quantidade_losangos in range(quantidade):
     for tamanho_atual in range(1,tamanho+1):
