@@ -1,3 +1,4 @@
+
 class Stack():
     def __init__(self):
         self.items = []
@@ -14,30 +15,20 @@ class Stack():
 
 
 pilha = Stack()
-isvalido = False
-sequencia = input()
 
-for x in sequencia:
-    try:
-        if(x == "I"):
-            pilha.push(0)
-        else:
-            pilha.pop()
-
-    except:
-        isvalido = False
-        break
-    isvalido=True
-
-if(pilha.isEmpty() == True):
-    if(isvalido == True):
-        print("VÁLIDO")
-    else:
-        print("INVÁLIDO")
-else:
-    print("INVÁLIDO")
+def determinarString(x,y,pilha):
+    for interable in range(len(x)):
+        if(x[interable] == y[len(y)-1-interable]):
+            pilha.push(x[interable])
     
+    if(pilha.size() == len(x)):
+        return True
+    else:
+        for x in range(pilha.size()):
+            pilha.pop()
+        return False
 
 
+print(determinarString("ABCD","DCBA",pilha))
 
 
