@@ -15,15 +15,15 @@ filaUm = Queue()
 filaDois = Queue()
 
 
-add = [1,3,5,7,9]
+add = input().split(" ")
 
 for x in range(len(add)):
-    filaUm.enqueue(add[x])
+    filaUm.enqueue(int(add[x]))
 
-add = [2,4,6,8]
+add = input().split(" ")
 
 for x in range(len(add)):
-    filaDois.enqueue(add[x])
+    filaDois.enqueue(int(add[x]))
 
 maior = filaUm.size() if filaUm.size() > filaDois.size() else filaDois.size()
 

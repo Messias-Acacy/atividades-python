@@ -29,6 +29,9 @@ def determinarString(x,y,pilha):
         return False
 
 
-print(determinarString("ABCD","DCBA",pilha))
+stringX = input()
+stringY = stringX[::-1]
+
+print(determinarString(stringX,stringY,pilha))
 
 

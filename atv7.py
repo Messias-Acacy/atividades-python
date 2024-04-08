@@ -28,18 +28,19 @@ class Stack():
 fila = Queue()
 pilha = Stack()
 
-
-for x in range(10):
+for x in range(5):
     fila.enqueue(x+1)
 
 
-for x in range(fila.size()):
-    pilha.push(fila.dequeue())
+def inverterOrdem(fila,pilha):
+    for x in range(fila.size()):
+        pilha.push(fila.dequeue())
 
 
-for x in range(pilha.size()):
-    fila.enqueue(pilha.pop())
+    for x in range(pilha.size()):
+        fila.enqueue(pilha.pop())
 
+inverterOrdem(fila,pilha)
 
 
 

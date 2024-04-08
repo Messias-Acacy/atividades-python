@@ -33,12 +33,14 @@ fila = Queue()
 
 pilha = Stack()
 
+
+
 itens = [1,-1,2,-2,3,-3,4,-4,28,-58,-85]
 for x in range(len(itens)):
     fila.enqueue(itens[x])
 
 
-
+fila.printQueue()
 
 for x in range(fila.size()):
     numero = fila.dequeue()
@@ -47,7 +49,12 @@ for x in range(fila.size()):
     else:
         pilha.push(numero)
 
-fila.printQueue()
+
+for x in range(pilha.size()):
+    fila.enqueue(pilha.pop())
+
+for x in range(fila.size()):
+    pilha.push(fila.dequeue())
 
 for x in range(pilha.size()):
     fila.enqueue(pilha.pop())
